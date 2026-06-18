@@ -14,7 +14,7 @@
 const inhalte = {
 
   // ---- Kopfbereich / Eyebrow-Text über dem Produktnamen ----
-  eyebrow: "SMARTSTORE · PRODUKTINFO",
+  eyebrow: "SMARTSTORE JenaSvenEleven · PRODUKTINFO",
 
   // ---- Produktname und Untertitel ----
   produktname: "L'Oréal Men Expert Barber Club",
