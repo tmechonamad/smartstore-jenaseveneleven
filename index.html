@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Oréal Men Expert Barber Club – Produktinfo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F2E9D8;
+    --surface: #FBF6EC;
+    --copper: #B5481E;
+    --copper-dark: #93371A;
+    --ink: #2A1B12;
+    --ink-soft: #6B5C4D;
+    --charcoal: #1C1A18;
+    --gold: #C9A227;
+    --line: rgba(42,27,18,0.14);
+  }
+
+  * { box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page{
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: var(--bg);
+    padding-bottom: 110px;
+    position: relative;
+  }
+
+  /* ---------- Kopfbereich ---------- */
+  .top{
+    text-align:center;
+    padding: 22px 20px 14px;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+  }
+  .top-rule{
+    width: 42px;
+    height: 2px;
+    background: var(--gold);
+    margin: 10px auto 0;
+  }
+
+  /* ---------- Hero / Produktfoto + Preis-Tag ---------- */
+  .hero{
+    display:flex;
+    justify-content:center;
+    padding: 18px 20px 30px;
+  }
+  .photo-wrap{
+    position: relative;
+    display:inline-block;
+  }
+  .photo-wrap img{
+    display:block;
+    height: 300px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 14px 18px rgba(28,26,24,0.18));
+  }
+  .price-tag{
+    position:absolute;
+    bottom: -14px;
+    right: -22px;
+    background: var(--surface);
+    border: 1.5px solid var(--ink);
+    border-radius: 5px;
+    padding: 14px 16px 10px;
+    transform: rotate(-7deg);
+    box-shadow: 5px 6px 0 rgba(42,27,18,0.16);
+    min-width: 90px;
+    text-align:center;
+  }
+  .price-tag::before{
+    content:"";
+    position:absolute;
+    top:-7px; left:50%;
+    transform: translateX(-50%);
+    width:13px; height:13px;
+    border-radius:50%;
+    background: var(--bg);
+    border: 1.5px solid var(--ink);
+  }
+  .price-tag .preis{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700;
+    font-size: 1.35rem;
+    color: var(--copper);
+    line-height:1;
+  }
+  .price-tag .menge{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  /* ---------- Produktname ---------- */
+  .info{ padding: 0 24px; }
+  .produktname{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height:1.15;
+    margin: 0 0 4px;
+  }
+  .produkttyp{
+    font-family:'Oswald', sans-serif;
+    font-weight:500;
+    color: var(--copper);
+    font-size: 1rem;
+    margin: 0 0 12px;
+  }
+  .kurzbeschreibung{
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    line-height:1.5;
+    margin: 0 0 26px;
+  }
+
+  /* ---------- X3 Wirkung ---------- */
+  .section-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--copper);
+    margin: 0 0 12px;
+  }
+  .wirkungen{
+    list-style:none;
+    margin: 0 0 28px;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+  }
+  .wirkungen li{
+    border-left: 3px solid var(--gold);
+    padding: 2px 0 2px 14px;
+  }
+  .wirkungen .titel{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .wirkungen .text{
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    line-height:1.45;
+  }
+
+  /* ---------- Beschreibung ---------- */
+  .beschreibung, .anwendung{
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+  .anwendung{
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+
+  /* ---------- Inhaltsstoffe ---------- */
+  .inhaltsstoffe-text{
+    font-size: 0.9rem;
+    line-height: 2;
+    color: var(--ink-soft);
+    margin: 0 0 34px;
+  }
+  .ingredient{
+    color: var(--ink);
+    text-decoration: underline dotted var(--copper);
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 2px 0;
+  }
+  .ingredient:hover, .ingredient:focus{
+    color: var(--copper);
+  }
+  .dot{
+    color: var(--gold);
+    margin: 0 2px;
+  }
+
+  /* ---------- PayPal Demo ---------- */
+  .zahlung-box{
+    margin: 0 24px 36px;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    text-align:center;
+  }
+  .zahlung-hinweis{
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .paypal-btn{
+    width:100%;
+    border:none;
+    border-radius: 8px;
+    background: #1C3D6E;
+    color: #fff;
+    font-family:'Source Sans 3', sans-serif;
+    font-weight:700;
+    font-size: 0.98rem;
+    padding: 14px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 10px;
+    cursor:pointer;
+    transition: filter 0.15s ease;
+  }
+  .paypal-btn:hover{ filter: brightness(1.08); }
+  .paypal-btn svg{ width:18px; height:18px; flex-shrink:0; }
+
+  /* ---------- Fußzeile ---------- */
+  .fusszeile{
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    opacity:0.7;
+    padding: 6px 20px 26px;
+  }
+
+  /* ---------- Bottom Sheet (Inhaltsstoff-Info & Chat) ---------- */
+  .overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(28,26,24,0.42);
+    opacity:0;
+    pointer-events:none;
+    transition: opacity 0.2s ease;
+    z-index: 40;
+  }
+  .overlay.aktiv{ opacity:1; pointer-events:auto; }
+
+  .sheet{
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 110%);
+    width: 100%;
+    max-width: 480px;
+    background: var(--charcoal);
+    color: var(--bg);
+    border-radius: 16px 16px 0 0;
+    padding: 20px 22px 26px;
+    transition: transform 0.25s ease;
+    z-index: 50;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
+  }
+  .sheet.aktiv{ transform: translate(-50%, 0); }
+
+  .sheet-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .sheet-title{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin:0;
+  }
+  .sheet-close{
+    background: rgba(255,255,255,0.1);
+    border:none;
+    color: var(--bg);
+    width: 28px; height:28px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size: 1rem;
+    line-height:1;
+    flex-shrink:0;
+  }
+  .sheet-text{
+    font-size: 0.9rem;
+    line-height:1.55;
+    color: #D9CFC0;
+    margin:0;
+  }
+
+  /* ---------- Chat ---------- */
+  .chat-fab{
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--copper);
+    border: none;
+    box-shadow: 0 8px 18px rgba(42,27,18,0.3);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index: 30;
+  }
+  .chat-fab svg{ width:24px; height:24px; }
+
+  .chat-sheet{ max-height: 78vh; display:flex; flex-direction:column; padding-bottom: 16px; }
+  .chat-messages{
+    flex:1;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    margin: 6px 0 14px;
+    padding-right: 2px;
+  }
+  .msg{
+    max-width: 82%;
+    padding: 9px 13px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    line-height:1.4;
+  }
+  .msg.bot{
+    background: rgba(255,255,255,0.08);
+    color: var(--bg);
+    align-self:flex-start;
+    border-bottom-left-radius: 3px;
+  }
+  .msg.user{
+    background: var(--copper);
+    color:#fff;
+    align-self:flex-end;
+    border-bottom-right-radius: 3px;
+  }
+  .chat-input-row{
+    display:flex;
+    gap: 8px;
+  }
+  .chat-input-row input{
+    flex:1;
+    border: none;
+    border-radius: 20px;
+    padding: 11px 15px;
+    font-family:'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.1);
+    color: var(--bg);
+  }
+  .chat-input-row input::placeholder{ color: #B8AC9C; }
+  .chat-input-row input:focus{ outline: 1.5px solid var(--gold); }
+  .chat-send{
+    border:none;
+    border-radius:50%;
+    width: 42px; height:42px;
+    background: var(--gold);
+    color: var(--charcoal);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .chat-send svg{ width:18px; height:18px; }
+
+  /* ---------- PayPal Modal (Simulation) ---------- */
+  .modal{
+    position: fixed;
+    inset:0;
+    background: rgba(28,26,24,0.55);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    pointer-events:none;
+    transition: opacity 0.2s ease;
+    z-index: 60;
+    padding: 24px;
+  }
+  .modal.aktiv{ opacity:1; pointer-events:auto; }
+  .modal-card{
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 30px 26px;
+    width: 100%;
+    max-width: 340px;
+    text-align:center;
+  }
+  .modal-icon{
+    width: 46px; height:46px;
+    margin: 0 auto 16px;
+  }
+  .spinner{
+    width: 34px; height:34px;
+    border: 3px solid var(--line);
+    border-top-color: var(--copper);
+    border-radius:50%;
+    margin: 0 auto 18px;
+    animation: dreh 0.8s linear infinite;
+  }
+  @keyframes dreh{ to{ transform: rotate(360deg); } }
+  .modal-status{
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .modal-erfolg-titel{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+    color: var(--copper);
+  }
+  .modal-erfolg-text{
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height:1.5;
+    margin: 0 0 20px;
+  }
+  .modal-close-btn{
+    border:none;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-weight:600;
+    cursor:pointer;
+    font-family:'Source Sans 3', sans-serif;
+  }
+  .hidden{ display:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    .sheet, .overlay, .modal, .spinner{ transition:none; animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="top">
+    <div class="eyebrow" id="eyebrow"></div>
+    <div class="top-rule"></div>
+  </div>
+
+  <div class="hero">
+    <div class="photo-wrap">
+      <img src="produktbild.jpg" alt="Produktfoto">
+      <div class="price-tag">
+        <div class="preis" id="tagPreis"></div>
+        <div class="menge" id="tagMenge"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info">
+    <h1 class="produktname" id="produktname"></h1>
+    <div class="produkttyp" id="produkttyp"></div>
+    <p class="kurzbeschreibung" id="kurzbeschreibung"></p>
+
+    <div class="section-label">X3 WIRKUNG</div>
+    <ul class="wirkungen" id="wirkungen"></ul>
+
+    <p class="beschreibung" id="beschreibung"></p>
+    <p class="anwendung" id="anwendung"></p>
+
+    <div class="section-label">INHALTSSTOFFE</div>
+    <p class="inhaltsstoffe-text" id="inhaltsstoffe"></p>
+  </div>
+
+  <div class="zahlung-box">
+    <p class="zahlung-hinweis" id="zahlungshinweis"></p>
+    <button class="paypal-btn" id="paypalBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 14h3"/></svg>
+      <span id="paypalBtnText"></span>
+    </button>
+  </div>
+
+  <div class="fusszeile" id="fusszeile"></div>
+
+</div>
+
+<!-- Overlay für Bottom Sheets -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Inhaltsstoff Info Sheet -->
+<div class="sheet" id="ingredientSheet">
+  <div class="sheet-head">
+    <h3 class="sheet-title" id="ingredientTitle"></h3>
+    <button class="sheet-close" id="ingredientClose">✕</button>
+  </div>
+  <p class="sheet-text" id="ingredientText"></p>
+</div>
+
+<!-- Chat Sheet -->
+<button class="chat-fab" id="chatFab" aria-label="Kundencenter-Assistent öffnen">
+  <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+  </svg>
+</button>
+
+<div class="sheet chat-sheet" id="chatSheet">
+  <div class="sheet-head">
+    <h3 class="sheet-title">Kundencenter-Assistent</h3>
+    <button class="sheet-close" id="chatClose">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="Frage eingeben …">
+    <button class="chat-send" id="chatSend" aria-label="Senden">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- PayPal Demo Modal -->
+<div class="modal" id="payModal">
+  <div class="modal-card">
+    <div id="payLoading">
+      <div class="spinner"></div>
+      <p class="modal-status" id="payStatus"></p>
+    </div>
+    <div id="payErfolg" class="hidden">
+      <p class="modal-erfolg-titel" id="payErfolgTitel"></p>
+      <p class="modal-erfolg-text" id="payErfolgText"></p>
+      <button class="modal-close-btn" id="payClose"></button>
+    </div>
+  </div>
+</div>
+
+<script src="inhalte.js"></script>
+<script>
+  // ---------- Texte aus inhalte.js in die Seite einsetzen ----------
+  document.getElementById('eyebrow').textContent = inhalte.eyebrow;
+  document.getElementById('tagPreis').textContent = inhalte.preis;
+  document.getElementById('tagMenge').textContent = inhalte.menge;
+  document.getElementById('produktname').textContent = inhalte.produktname;
+  document.getElementById('produkttyp').textContent = inhalte.produkttyp;
+  document.getElementById('kurzbeschreibung').textContent = inhalte.kurzbeschreibung;
+  document.getElementById('beschreibung').textContent = inhalte.beschreibung;
+  document.getElementById('anwendung').textContent = inhalte.anwendung;
+  document.getElementById('zahlungshinweis').textContent = inhalte.zahlungshinweis;
+  document.getElementById('paypalBtnText').textContent = inhalte.zahlung.buttonText;
+  document.getElementById('fusszeile').textContent = inhalte.fusszeile;
+
+  const wirkungenListe = document.getElementById('wirkungen');
+  inhalte.wirkungen.forEach(w => {
+    const li = document.createElement('li');
+    li.innerHTML = `<div class="titel">${w.titel}</div><div class="text">${w.text}</div>`;
+    wirkungenListe.appendChild(li);
+  });
+
+  const inhaltsstoffeEl = document.getElementById('inhaltsstoffe');
+  inhalte.inhaltsstoffe.forEach((stoff, i) => {
+    const span = document.createElement('span');
+    span.className = 'ingredient';
+    span.tabIndex = 0;
+    span.textContent = stoff.name;
+    span.addEventListener('click', () => zeigeInhaltsstoff(stoff));
+    span.addEventListener('keypress', (e) => { if(e.key === 'Enter') zeigeInhaltsstoff(stoff); });
+    inhaltsstoffeEl.appendChild(span);
+    if (i < inhalte.inhaltsstoffe.length - 1){
+      const dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.textContent = ' · ';
+      inhaltsstoffeEl.appendChild(dot);
+    }
+  });
+
+  // ---------- Bottom Sheets: gemeinsame Steuerung ----------
+  const overlay = document.getElementById('overlay');
+  const ingredientSheet = document.getElementById('ingredientSheet');
+  const chatSheet = document.getElementById('chatSheet');
+
+  function schliesseAlleSheets(){
+    overlay.classList.remove('aktiv');
+    ingredientSheet.classList.remove('aktiv');
+    chatSheet.classList.remove('aktiv');
+  }
+  overlay.addEventListener('click', schliesseAlleSheets);
+
+  function zeigeInhaltsstoff(stoff){
+    document.getElementById('ingredientTitle').textContent = stoff.name;
+    document.getElementById('ingredientText').textContent = stoff.beschreibung;
+    overlay.classList.add('aktiv');
+    ingredientSheet.classList.add('aktiv');
+  }
+  document.getElementById('ingredientClose').addEventListener('click', schliesseAlleSheets);
+
+  // ---------- Chatbot ----------
+  const chatFab = document.getElementById('chatFab');
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput = document.getElementById('chatInput');
+  let chatGeoeffnet = false;
+
+  function fuegeNachrichtHinzu(text, absender){
+    const div = document.createElement('div');
+    div.className = `msg ${absender}`;
+    div.textContent = text;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  chatFab.addEventListener('click', () => {
+    overlay.classList.add('aktiv');
+    chatSheet.classList.add('aktiv');
+    if (!chatGeoeffnet){
+      fuegeNachrichtHinzu(inhalte.chatbotBegruessung, 'bot');
+      chatGeoeffnet = true;
+    }
+  });
+  document.getElementById('chatClose').addEventListener('click', schliesseAlleSheets);
+
+  function chatbotAntwortFinden(frage){
+    const f = frage.toLowerCase();
+    const treffer = inhalte.chatbotAntworten.find(eintrag =>
+      eintrag.schluesselwoerter.some(wort => f.includes(wort))
+    );
+    return treffer ? treffer.antwort : inhalte.chatbotStandardantwort;
+  }
+
+  function nachrichtSenden(){
+    const text = chatInput.value.trim();
+    if (!text) return;
+    fuegeNachrichtHinzu(text, 'user');
+    chatInput.value = '';
+    setTimeout(() => {
+      fuegeNachrichtHinzu(chatbotAntwortFinden(text), 'bot');
+    }, 450);
+  }
+
+  document.getElementById('chatSend').addEventListener('click', nachrichtSenden);
+  chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') nachrichtSenden(); });
+
+  // ---------- PayPal-Zahlung (simuliert) ----------
+  const payModal = document.getElementById('payModal');
+  const payLoading = document.getElementById('payLoading');
+  const payErfolg = document.getElementById('payErfolg');
+  const payStatus = document.getElementById('payStatus');
+
+  document.getElementById('payErfolgTitel').textContent = inhalte.zahlung.erfolgTitel;
+  document.getElementById('payErfolgText').textContent = inhalte.zahlung.erfolgText;
+  document.getElementById('payClose').textContent = inhalte.zahlung.schliessenButton;
+
+  document.getElementById('paypalBtn').addEventListener('click', () => {
+    payLoading.classList.remove('hidden');
+    payErfolg.classList.add('hidden');
+    payStatus.textContent = inhalte.zahlung.schritt1;
+    payModal.classList.add('aktiv');
+
+    setTimeout(() => {
+      payStatus.textContent = inhalte.zahlung.schritt2;
+    }, 1100);
+
+    setTimeout(() => {
+      payLoading.classList.add('hidden');
+      payErfolg.classList.remove('hidden');
+    }, 2200);
+  });
+
+  document.getElementById('payClose').addEventListener('click', () => {
+    payModal.classList.remove('aktiv');
+  });
+</script>
+
+</body>
+</html>
