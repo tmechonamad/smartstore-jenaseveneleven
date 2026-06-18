@@ -13,10 +13,6 @@
 
 const inhalte = {
 
-  // ---- Begrüßungstext oben auf der Seite ----
-  begruessung: "Herzlich willkommen in Ihrem Smartstore!",
-  begruessungUntertext: "Hier finden Sie alle Produktdetails auf einen Blick. Bei Fragen stehen wir Ihnen jederzeit zur Verfügung – nutzen Sie einfach unseren Chat-Assistenten unten rechts.",
-
   // ---- Kopfbereich / Eyebrow-Text über dem Produktnamen ----
   eyebrow: "SMARTSTORE · PRODUKTINFO",
 
@@ -25,7 +21,7 @@ const inhalte = {
   produkttyp: "Duschgel für Körper, Haare & Bart",
 
   // ---- Kurzer Satz direkt unter dem Produktnamen ----
-  kurzbeschreibung: "Das Stop Stress Duschgel von L'Oréal Paris Men Expert ist ein intensives Waschgel speziell für Männerhaut – reinigt intensiv und hinterlässt einen holzig-fruchtigen Duft.",
+  kurzbeschreibung: "Drei Wirkungen in einer Formel – die schnelle Pflege für danach.",
 
   // ---- Preis-Tag (hängendes Schild am Produktfoto) ----
   preis: "2,00 €",
@@ -48,7 +44,9 @@ const inhalte = {
   ],
 
   // ---- Ausführlichere Beschreibung ----
-  beschreibung: "Das intensive Stop Stress Duschgel von L'Oréal Paris Men Expert ist speziell für Männer konzipiert und reinigt sowie pflegt nachhaltig. Der holzig-fruchtige Duft sorgt für ein entspannendes Duscherlebnis. Zudem wirkt das Stop Stress Duschgel feuchtigkeitsspendend und sorgt für ein Anti-Stress-Gefühl für Körper und Geist. Das Produkt ist grundsätzlich für alle Hauttypen geeignet.",
+  beschreibung: "Das Stop Stress Duschgel von L'Oréal Paris Men Expert ist ein intensives Waschgel speziell für Männerhaut. Es reinigt intensiv und hinterlässt einen holzig-fruchtigen Duft.
+
+Das intensive Stop Stress Duschgel von L'Oréal Paris Men Expert ist speziell für Männer konzipiert und reinigt sowie pflegt nachhaltig. Der holzig-fruchtige Duft sorgt für ein entspannendes Duscherlebnis. Zudem wirkt das Stop Stress Duschgel feuchtigkeitsspendend und sorgt für ein Anti-Stress-Gefühl für Körper und Geist. Das Stop Stress Duschgel ist grundsätzlich für alle Hauttypen geeignet ist.",
 
   // ---- Anwendungshinweis ----
   anwendung: "Anwendung: Zunächst den Körper, das Gesicht sowie die Haare unter der Dusche ausreichend mit Wasser benetzen. Anschließend das Stop Stress Duschgel von L'Oréal Paris Men Expert auf die jeweiligen Körperstellen auftragen und dort aufschäumen. Nun den Schaum des kräftigenden und belebenden Waschgels sanft in das Haar sowie in die Haut einmassieren. Zum Schluss sorgfältig mit klarem, warmem Wasser abspülen. Das L'Oréal Paris Men Expert Stop Stress Duschgel überzeugt mit einem intensiv holzig-fruchtigen Duft und kann täglich, auch mehrfach, zur Reinigung verwendet werden.",

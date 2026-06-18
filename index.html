@@ -36,43 +36,6 @@
     position: relative;
   }
 
-  /* ---------- Begrüßung ---------- */
-  .begruessung-box{
-    margin: 0 20px 8px;
-    background: var(--charcoal);
-    border-radius: 12px;
-    padding: 18px 20px 16px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-  .begruessung-icon{
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .begruessung-titel{
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    margin: 0 0 5px;
-  }
-  .begruessung-text{
-    font-size: 0.84rem;
-    line-height: 1.5;
-    color: #D9CFC0;
-    margin: 0;
-  }
-  .begruessung-text .chat-link{
-    color: var(--gold);
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: underline dotted;
-  }
-
   /* ---------- Kopfbereich ---------- */
   .top{
     text-align:center;
@@ -530,15 +493,6 @@
     <div class="top-rule"></div>
   </div>
 
-  <!-- Begrüßungsbox -->
-  <div class="begruessung-box">
-    <div class="begruessung-icon">👋</div>
-    <div>
-      <div class="begruessung-titel" id="begruessung"></div>
-      <p class="begruessung-text" id="begruessungUntertext"></p>
-    </div>
-  </div>
-
   <!-- Zwei Flaschen -->
   <div class="flaschen-row">
     <div class="flasche-wrap">
@@ -665,32 +619,6 @@
 <script>
   // ---------- Grundtexte ----------
   document.getElementById('eyebrow').textContent = inhalte.eyebrow;
-  document.getElementById('begruessung').textContent = inhalte.begruessung;
-
-  // Begrüßungsuntertext mit klickbarem "Chat-Assistenten" Link
-  const begruessungEl = document.getElementById('begruessungUntertext');
-  const begruessungText = inhalte.begruessungUntertext;
-  const chatLinkText = "Chat-Assistenten";
-  const idx = begruessungText.indexOf(chatLinkText);
-  if (idx !== -1) {
-    begruessungEl.appendChild(document.createTextNode(begruessungText.substring(0, idx)));
-    const link = document.createElement('span');
-    link.className = 'chat-link';
-    link.textContent = chatLinkText;
-    link.addEventListener('click', () => {
-      overlay.classList.add('aktiv');
-      chatSheet.classList.add('aktiv');
-      if (!chatGeoeffnet){
-        fuegeNachrichtHinzu(inhalte.chatbotBegruessung, 'bot');
-        chatGeoeffnet = true;
-      }
-    });
-    begruessungEl.appendChild(link);
-    begruessungEl.appendChild(document.createTextNode(begruessungText.substring(idx + chatLinkText.length)));
-  } else {
-    begruessungEl.textContent = begruessungText;
-  }
-
   document.getElementById('tagPreis').textContent = inhalte.preis;
   document.getElementById('tagMenge').textContent = inhalte.menge;
   document.getElementById('produktname').textContent = inhalte.produktname;
